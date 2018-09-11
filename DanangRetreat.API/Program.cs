@@ -19,6 +19,7 @@ namespace DanangRetreat.API
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("localhost:6000")
                 .UseStartup<Startup>();
     }
 }

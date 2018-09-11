@@ -1,0 +1,30 @@
+<main role="main" class="container">
+  <h1>Landing page</h1>
+  <div class="container">
+    <img src="" alt="" />
+    <form #searchAccommodationForm="ngForm" class="form-inline">
+      <input class="form-control mr-3"
+          name="fromDate"
+           placeholder="Check in"
+           [(ngModel)]="fromDate"
+           bsDatepicker
+           [minDate]="today"
+           [maxDate]="toDate">
+      <input class="form-control mr-3"
+          name="toDate"
+           placeholder="Check out"
+           [(ngModel)]="toDate"
+           bsDatepicker
+           [minDate]="fromDate">
+      <input class="form-control"
+          type="number"
+          min="1"
+           name="persons"
+           placeholder="Persons"
+           [(ngModel)]="numberOfGuests">
+    </form>
+    <div class="row" *ngFor="let item of featuredList">
+      <app-accommodation-card [accomodation]="item"></app-accommodation-card>
+    </div>
+  </div>
+</main>
